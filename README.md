@@ -1,3 +1,3 @@
 # Kamikaze
 
-CMS-like Angular project with SQLite database
+CMS-like NodeJs + Angular project with SQLite database
