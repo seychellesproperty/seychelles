@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "NodeJs backend for Angular CMS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kauebkf/kamikaze.git"
+  },
+  "author": "Kaue Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/kauebkf/kamikaze/issues"
+  },
+  "homepage": "https://gitlab.com/kauebkf/kamikaze#README",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
