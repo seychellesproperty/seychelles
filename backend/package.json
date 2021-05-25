@@ -11,11 +11,11 @@
     "url": "git+https://gitlab.com/kauebkf/kamikaze.git"
   },
   "author": "Kaue Oliveira",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://gitlab.com/kauebkf/kamikaze/issues"
   },
-  "homepage": "https://gitlab.com/kauebkf/kamikaze#README",
+  "homepage": "https://gitlab.com/kauebkf/kamikaze#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
