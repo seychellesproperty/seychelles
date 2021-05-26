@@ -1,0 +1,54 @@
+.file-upload {
+  .file-display {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    height         : 30px;
+    border-bottom  : 1px dashed #cccccc;
+
+    h6 {
+      width : 95%;
+      margin: 5px 0 0 0;
+    }
+
+    i {
+      margin   : 3px 0 0 0;
+      font-size: 30px;
+      color    : #828282;
+
+      &.fa-times {
+        font-size: 14px;
+        margin   : 8px 5px 0 0;
+
+        &:hover {
+          color: #707070;
+        }
+      }
+
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.upload-btn {
+  text-align   : center;
+  line-height  : 28px;
+  height       : 30px;
+  background   : #0F2E4B;
+  border-radius: 5px;
+  font-size    : 12px;
+  font-weight  : bold;
+  color        : #FFFFFF;
+  cursor       : pointer;
+  margin       : -5px 0;
+  border       : none;
+}
+
+.close-btn {
+  position   : absolute;
+  font-size  : 16px;
+  right      : 30px;
+  padding-top: 4px;
+}

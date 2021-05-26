@@ -1,0 +1,13 @@
+<div class="form-group d-flex align-items-start d-flex align-items-center m-b-0">
+
+       <input type="file" class="upload" (change)="uploadTaskAttachmentByID($event, false)" [accept]="acceptType"
+              #fileImg hidden />
+
+       <ngx-file-drop [dropZoneLabel]="insideText"
+              (click)="fileImg.click()"
+              (onFileDrop)="uploadTaskAttachmentByID($event, true)" class="file-drop flex-1">
+       </ngx-file-drop>
+       <a href="javascript:void(0)" (click)="removeFile()" class="close-btn" *ngIf="checkFile">
+              <i class="fas fa-times"></i>
+       </a>
+</div>

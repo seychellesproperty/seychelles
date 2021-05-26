@@ -154,3 +154,5 @@ fabric.properties
 
 # SQLite db
 *.db
+
+/backend/images
