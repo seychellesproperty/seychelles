@@ -1,8 +1,10 @@
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
-const fs = require('fs');
+// const jsonParser = bodyParser.json()
+app.use(bodyParser.json({limit: '50mb'}));
 
 const host_static_url = 'http://localhost:3000/static/'
 let images = [];
@@ -40,8 +42,13 @@ db.serialize(() => {
 
 app.get('/get-images', function(req,res) {
     console.log(images);
-    res.json({images: images});
+    res.status(200).json({images: images});
 });
+
+app.post('/save-image', function (req, res) {
+    console.log(req.body.photo);
+    res.send('welcome, ' + req.body);
+})
 
 // db.close((err) => {
 //     if (err) {

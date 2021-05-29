@@ -30,8 +30,8 @@ export class AppComponent implements OnInit{
     else {
       this.getBase64(image).then(() => {
         console.log(this.base64_str);
+        this.uploadImageToServer(image);
       });
-      this.uploadImageToServer(image);
     }
   }
 

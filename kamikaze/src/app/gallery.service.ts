@@ -15,10 +15,10 @@ export class GalleryService {
   }
 
   getImages() {
-    return this.httpClient.get('http://localhost:3000/image', {headers: this.headers});
+    return this.httpClient.get('http://localhost:3000/get-images', {headers: this.headers});
   }
 
   uploadImage(data: any) {
-    return this.httpClient.post('http://localhost:3000/save', data,{headers: this.headers});
+    return this.httpClient.post('http://localhost:3000/save-image', data,{headers: this.headers});
   }
 }
