@@ -3,11 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
-// const jsonParser = bodyParser.json()
 app.use(bodyParser.json({limit: '50mb'}));
+const { v4: uuidv4 } = require('uuid');
 
 const host_static_url = 'http://localhost:3000/static/'
 let images = [];
+let imageError = null;
 
 const dir = path.join(__dirname, 'images');
 app.use('/static', express.static(dir));
@@ -46,9 +47,32 @@ app.get('/get-images', function(req,res) {
 });
 
 app.post('/save-image', function (req, res) {
-    console.log(req.body.photo);
-    res.send('welcome, ' + req.body);
-})
+    save_image_to_disk(req.body.photo);
+    res.status(200).send({message: 'success'});
+});
+
+function save_image_to_disk(base64_str) {
+    filename = uuidv4() + '.jpg';
+    require("fs").writeFile("images/" + filename, base64_str, 'base64', function(err) {
+        if (err) {
+            imageError = err;
+        }
+    });
+    if (!imageError) {
+        save_image_to_db(filename);
+        let imgData = {link: host_static_url + filename};
+        images.push(imgData);
+    }
+}
+
+function save_image_to_db(filename) {
+    db.serialize(() => {
+        var stmt = db.prepare("INSERT INTO photos (photo) VALUES (?)");
+        stmt.run(filename);
+        stmt.finalize();
+    });
+}
+
 
 // db.close((err) => {
 //     if (err) {

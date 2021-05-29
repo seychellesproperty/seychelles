@@ -8,6 +8,7 @@ export class GalleryService {
 
   constructor(private httpClient: HttpClient) { }
   headers: HttpHeaders | undefined;
+  serverUrl = 'http://localhost:3000';
 
   setHeader() {
     this.headers = new HttpHeaders()
@@ -15,10 +16,10 @@ export class GalleryService {
   }
 
   getImages() {
-    return this.httpClient.get('http://localhost:3000/get-images', {headers: this.headers});
+    return this.httpClient.get(this.serverUrl + '/get-images', {headers: this.headers});
   }
 
   uploadImage(data: any) {
-    return this.httpClient.post('http://localhost:3000/save-image', data,{headers: this.headers});
+    return this.httpClient.post(this.serverUrl + '/save-image', data,{headers: this.headers});
   }
 }

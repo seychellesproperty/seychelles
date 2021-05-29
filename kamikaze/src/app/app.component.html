@@ -1,10 +1,132 @@
-<div class="container">
-  <div class="row" *ngFor="let image of images">
-    <img [src]="image.link" alt="" />
-    <p>{{image.description}}</p>
+<nav>
+  <div class="logo">
+    <a href="index.html">Sey<em>chelles</em></a>
+  </div>
+  <div class="menu-icon">
+    <span></span>
+  </div>
+</nav>
+
+<div id="video-container">
+  <div class="video-overlay"></div>
+  <div class="video-content">
+    <div class="inner">
+      <h1>Welcome to <em>Seychelles Property</em></h1>
+      <p>The best property in seychelles</p>
+      <p>Because you deserve a comfortable life</p>
+      <div class="scroll-icon">
+        <a class="scrollTo" data-scrollTo="masonry" href="#"><img src="assets/img/scroll-icon.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <video autoplay loop muted>
+    <source src="assets/beach.mp4" type="video/mp4" />
+  </video>
+</div>
+
+
+<div class="masonry-portfolio" id="masonry">
+  <div class="container-fluid">
+    <div class="masonry">
+      <div class="item col-md-4 col-sm-6 col-xs-12" *ngFor="let image of images">
+        <a [href]="image.link" data-lightbox="image-1"><div class="thumb">
+          <div class="hover-effect">
+            <div class="hover-content">
+              <h1>Succulents <em>chambray</em></h1>
+              <p>Awesome Subtittle Goes Here</p>
+            </div>
+          </div>
+          <div class="image">
+            <img [src]="image.link" style="object-fit: cover; width: 600px; height: 450px;">
+          </div>
+        </div></a>
+      </div>
+    </div>
   </div>
 </div>
 
+<footer>
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <p>Copyright &copy; 2018 Company Name
+
+        | Designed by TemplateMo</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Modal button -->
+<div class="popup-icon">
+  <button id="modBtn" class="modal-btn"><img src="assets/img/contact-icon.png" alt=""></button>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <!-- Modal Content -->
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h3 class="header-title">Say hello to <em>Highway</em></h3>
+      <div class="close-btn"><img src="assets/img/close_contact.png" alt=""></div>
+    </div>
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <div class="col-md-6 col-md-offset-3">
+        <form id="contact" action="" method="post">
+          <div class="row">
+            <div class="col-md-12">
+              <fieldset>
+                <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+              </fieldset>
+            </div>
+            <div class="col-md-12">
+              <fieldset>
+                <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+              </fieldset>
+            </div>
+            <div class="col-md-12">
+              <fieldset>
+                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+              </fieldset>
+            </div>
+            <div class="col-md-12">
+              <fieldset>
+                <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="overlay-menu">
+  <div class="container">
+    <div class="row">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="about.html">Home</a>
+          </li>
+          <li>
+            <a href="blog.html">About Us</a>
+          </li>
+          <li>
+            <a href="single-post.html">Facebook</a>
+          </li>
+          <li>
+            <a href="single-post.html">Instagram</a>
+          </li>
+        </ul>
+        <p>We have the best properties for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-file-upload
   (uploadChange)="uploadImage($event)"

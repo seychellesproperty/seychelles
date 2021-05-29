@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
       obj.images.forEach((entry: object ) => {
         this.images.push(entry);
       })
+      console.log(this.images);
     });
   }
 
