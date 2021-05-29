@@ -5,11 +5,17 @@ const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
 const host_static_url = 'http://localhost:3000/static/'
-
 let images = [];
 
 const dir = path.join(__dirname, 'images');
 app.use('/static', express.static(dir));
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 
 let db = new sqlite3.Database('./kamikaze.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
@@ -32,31 +38,10 @@ db.serialize(() => {
     });
 });
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
-
-app.get('/image', function(req,res) {
+app.get('/get-images', function(req,res) {
     console.log(images);
     res.json({images: images});
 });
-
-// function openImage(imagePath) {
-//     let file_str = base64_encode('./images/' + imagePath);
-//     images.push(file_str);
-// }
-
-
-
-function base64_encode(file) {
-    let bitmap = fs.readFileSync(file);
-    return new Buffer(bitmap).toString('base64');
-}
-
 
 // db.close((err) => {
 //     if (err) {
