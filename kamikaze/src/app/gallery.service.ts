@@ -8,7 +8,7 @@ export class GalleryService {
 
   constructor(private httpClient: HttpClient) { }
   fields = 'media_url,media_type,caption';
-  tokenIG = 'IGQVJXcDZAmRWU5cFhpQlhvRVF5akhHRTlFaFB0dFNXSnVBdzMwSHRTbXR6X2U0YVlQbkNscHBWVHZA2emU5S19qRk5GSVQ0N2JjTnlVOG9mM2hXeFlkbHpsSFIzbGRDeGdTVDhnNlpB';
+  tokenIG = '';
 
   loadPhotosFromInstagram() {
 

@@ -7,11 +7,17 @@ import {HttpClientModule} from "@angular/common/http";
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { FormsModule } from '@angular/forms';
 import {FileUploadComponent} from "./file-upload/file-upload.component";
+import { HomeComponent } from './home/home.component';
+import { DescriptionComponent } from './description/description.component';
+import { PresentComponent } from './present/present.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    HomeComponent,
+    DescriptionComponent,
+    PresentComponent
   ],
   imports: [
     BrowserModule,

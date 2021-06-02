@@ -1,0 +1,120 @@
+  <nav>
+  <div class="logo">
+    <a href="index.html">The Complete <em>Villa</em></a>
+  </div>
+  <div class="menu-icon">
+    <span></span>
+  </div>
+</nav>
+
+<div id="video-container">
+  <div class="video-overlay"></div>
+  <div class="video-content">
+    <div class="inner">
+      <h1>Welcome to <em>The Complete Villa</em></h1>
+      <p>The best property in Seychelles</p>
+      <p>Because you deserve a comfortable life</p>
+      <div class="scroll-icon">
+        <a class="scrollTo" data-scrollTo="masonry" href="#"><img src="assets/img/scroll-icon.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <img src="assets/img/bg.png" alt="" style="object-fit: cover; height: 100%; width: 100%">
+</div>
+
+
+<div class="masonry-portfolio" id="masonry">
+  <div class="container-fluid">
+    <div class="masonry">
+      <div class="item col-md-4 col-sm-6 col-xs-12" *ngFor="let image of images">
+        <a [href]="image.link" data-lightbox="image-1"><div class="thumb">
+          <div class="hover-effect">
+            <div class="hover-content">
+              <h1>{{image.description}}</h1>
+              <p></p>
+            </div>
+          </div>
+          <div class="image">
+            <img [src]="image.link" style="object-fit: cover; width: 600px; height: 450px;">
+          </div>
+        </div></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <p>Copyright &copy; 2021 Seychelles Property</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Modal button -->
+<div class="popup-icon">
+  <button id="modBtn" class="modal-btn"><img src="assets/img/contact-icon.png" alt=""></button>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <!-- Modal Content -->
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h3 class="header-title"><em>Say</em> hello <em>to us</em></h3>
+      <div class="close-btn"><img src="assets/img/close_contact.png" alt=""></div>
+    </div>
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <div class="col-md-6 col-md-offset-3">
+        <form id="contact" action="" method="post">
+          <div class="row">
+            <div class="col-md-12 custom-div">
+              <h2>Property Seychelles &copy;</h2><br><br>
+              <p class="text-left"><span class="text-danger">Address:</span> P.O. Box 142, Victoria Mahe, Seychelles</p>
+              <p class="text-left"><span class="text-danger">Phone:</span>  <a href="tel:2484280900260" style="color: white">(248) 428 09 00 260</a></p>
+              <p class="text-left"><span class="text-danger">Email:</span>  <a href="mailto:seychelles.property01@gmail.com" style="color: white">seychelles.property01@gmail.com</a></p>
+            </div>
+            <div class="col-md-12">
+              <p>&nbsp;</p>
+              <fieldset>
+                <a href="mailto:seychelles.property01@gmail.com" style="color: white">Send Message Now</a>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="overlay-menu">
+  <div class="container">
+    <div class="row">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="#" routerLink="/home">Home</a>
+          </li>
+          <li>
+            <a href="#" routerLink="/description">Description</a>
+          </li>
+          <li>
+            <a href="#" routerLink="/present">Present</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100068682701457" target="_blank">Facebook</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/seychellesproperty/" target="_blank">Instagram</a>
+          </li>
+        </ul>
+        <p>We have the best properties for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
