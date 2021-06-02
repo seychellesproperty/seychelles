@@ -42,14 +42,16 @@
             </div>
         </div>
     </div>
+    <div class="" *ngFor="let i of pdfIndexes">
     <embed
-    src="https://seychellesproperty.github.io/seychelles/assets/pdf/1.pdf"
+    [src]='"https://seychellesproperty.github.io/seychelles/assets/pdf/" + i + ".pdf"'
     type="application/pdf"
     frameBorder="0"
     scrolling="auto"
     height="100%"
     width="100%"
-    >
+    ><br>
+    </div>
 
     <footer>
         <div class="container-fluid">
