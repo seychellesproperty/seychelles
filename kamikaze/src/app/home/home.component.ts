@@ -10,21 +10,12 @@ import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 
 export class HomeComponent implements OnInit {
     title = 'Seychelles Property';
   showImage = false;
-  images = new Array;
   page = 'home';
+  imageIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   constructor(private galleryService: GalleryService) {
   }
 
   ngOnInit(): void {
-    this.galleryService.loadPhotosFromInstagram().subscribe(res => {
-      console.log(res);
-      let response = Object.assign(res);
-      response.data.forEach((image: any) => {
-        if (image.media_type == 'CAROUSEL_ALBUM' || image.media_type == 'IMAGE') {
-          this.images.push({link: image.media_url, description:image.caption || ''});
-        }
-      });
-    });
   }
 
 }
