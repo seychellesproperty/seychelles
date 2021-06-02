@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   title = 'Seychelles Property';
   showImage = false;
   images = new Array;
+  page = 'home';
   constructor(private galleryService: GalleryService) {
   }
   ngOnInit() {
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit{
       let response = Object.assign(res);
       response.data.forEach((image: any) => {
         if (image.media_type == 'CAROUSEL_ALBUM' || image.media_type == 'IMAGE') {
-          this.images.push({link: image.media_url, description:image.caption});
+          this.images.push({link: image.media_url, description:image.caption || ''});
         }
       });
     });
