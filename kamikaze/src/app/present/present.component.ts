@@ -15,7 +15,7 @@ export class PresentComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']) .then(() => { window.location.reload(); });
+    this.router.navigate(['/']) .then(() => { window.location.reload(); });
   }
 
 }

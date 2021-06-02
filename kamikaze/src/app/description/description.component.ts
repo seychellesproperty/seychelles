@@ -14,7 +14,7 @@ export class DescriptionComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']) .then(() => { window.location.reload(); });
+    this.router.navigate(['/']) .then(() => { window.location.reload(); });
   }
 
 }
