@@ -8,3 +8,10 @@
   background-color: rgba(184, 184, 184, 0.18);
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 800px) {
+  img {
+    width: 340px !important;
+    height: 450px;
+  }
+}
