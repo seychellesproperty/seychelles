@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap:  http://www.google.com/ping?sitemap=https://seychellesproperty.github.io/seychelles/sitemap.xml
