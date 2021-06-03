@@ -42,16 +42,20 @@
             </div>
         </div>
     </div>
-    <div class="" *ngFor="let i of pdfIndexes">
-    <embed
-    [src]='"https://seychellesproperty.github.io/seychelles/assets/pdf/" + i + ".pdf"'
-    type="application/pdf"
-    frameBorder="0"
-    scrolling="auto"
-    height="100%"
-    width="100%"
-    ><br>
-    </div>
+    <div class="item col-md-4 col-sm-6 col-xs-12" *ngFor="let index of blueprintIndexes">
+        <a [href]='"https://seychellesproperty.github.io/seychelles/assets/present/" + index + ".jpeg"' data-lightbox="image-2"><div class="thumb">
+          <div class="hover-effect">
+            <div class="hover-content">
+              <h1></h1>
+              <p></p>
+            </div>
+          </div>
+          <div class="image">
+            <img [src]='"https://seychellesproperty.github.io/seychelles/assets/present/" + index + ".jpeg"' style="object-fit: cover; width: 600px; height: 450px;">
+          </div>
+        </div></a>
+      </div>
+
 
     <footer>
         <div class="container-fluid">
