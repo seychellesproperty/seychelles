@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://seychellesproperty.github.io/seychelles/sitemap.xml
